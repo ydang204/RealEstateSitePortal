@@ -23,14 +23,36 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/ionicons/dist/css/ionicons.css",
+              "./node_modules/icheck/skins/flat/blue.css",
+              "./node_modules/morris.js/morris.css",
+              "./node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css",
+              "./node_modules/admin-lte/plugins/daterangepicker/daterangepicker.css",
+              "./node_modules/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/jquery-ui-dist/jquery-ui.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js",
+              "./node_modules/raphael/raphael.js",
+              "./node_modules/morris.js/morris.js",
+              "./node_modules/jquery-sparkline/jquery.sparkline.js",
+              "./node_modules/jquery-knob/dist/jquery.knob.min.js",
+              "./node_modules/moment/moment.js",
+              "./node_modules/daterangepicker/daterangepicker.js",
+              "./node_modules/bootstrap-datepicker/js/bootstrap-datepicker.js",
+              "./node_modules/jquery-slimscroll/jquery.slimscroll.js",
+              "./node_modules/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.all.js",
+              "./node_modules/icheck/icheck.js",
+              "./node_modules/admin-lte/dist/js/app.js",
+              "./src/assets/js/adminLTEOptions.js",
+              "./src/assets/js/script.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,13 +110,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -106,9 +123,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
