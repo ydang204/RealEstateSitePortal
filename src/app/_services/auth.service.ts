@@ -14,16 +14,10 @@ export class AuthService {
 
   constructor(private router: Router) {}
 
-  logIn(): Observable<boolean> {
-    return of(true).pipe(
-      delay(1000),
-      tap(val => {
-        this.isLoggedIn = val;
-        if (this.redirectUrl) {
-          this.router.navigateByUrl(this.redirectUrl);
-        }
-      })
-    );
+  logIn(): Observable<boolean> | boolean {
+    this.isLoggedIn = true;
+    this.router.navigateByUrl(this.redirectUrl);
+    return true;
   }
 
   logOut(): void {
