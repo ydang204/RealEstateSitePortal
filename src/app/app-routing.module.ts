@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -7,12 +8,21 @@ const routes: Routes = [
     loadChildren: () =>
       import('./login/login.module').then(mod => mod.LoginModule)
   },
-  { path: '', pathMatch: 'full', redirectTo: '' }
+  {
+    path: 'admin',
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import('./admin/admin.module').then(mod => mod.AdminModule)
+  },
+  { path: '', redirectTo: 'admin', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+      enableTracing: true
+    })
   ],
   exports: [RouterModule]
 })
