@@ -9,10 +9,11 @@ import { AuthService } from '../_services/auth.service';
 export class LoginComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    document.body.style.backgroundColor = '#d2d6de';
+  }
 
   logIn() {
-    alert('clicked');
     this.authService.logIn();
   }
 }
