@@ -8,6 +8,7 @@ import { ControlSidebarComponent } from './layout/control-sidebar/control-sideba
 import { FooterComponent } from './layout/footer/footer.component';
 import { ContentComponent } from './layout/content/content.component';
 import { LeftSideComponent } from './layout/left-side/left-side.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [CommonModule, AdminRoutingModule],
@@ -18,6 +19,7 @@ import { LeftSideComponent } from './layout/left-side/left-side.component';
     ContentComponent,
     FooterComponent,
     ControlSidebarComponent,
+    DashboardComponent
   ]
 })
 export class AdminModule {}
