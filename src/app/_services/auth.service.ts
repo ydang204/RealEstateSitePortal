@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -26,5 +25,7 @@ export class AuthService {
 
   logOut(): void {
     this.isLoggedIn = false;
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 }
