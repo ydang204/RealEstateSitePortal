@@ -12,10 +12,14 @@ export class AuthService {
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    if (localStorage.getItem('isLoggedIn')) {
+      this.isLoggedIn = true;
+    }
+  }
 
   logIn(): Observable<boolean> | boolean {
-    this.isLoggedIn = true;
+    localStorage.setItem('isLoggedIn', 'true');
     this.router.navigateByUrl(this.redirectUrl);
     return true;
   }
