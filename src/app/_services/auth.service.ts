@@ -19,6 +19,7 @@ export class AuthService {
 
   logIn(): Observable<boolean> | boolean {
     localStorage.setItem('isLoggedIn', 'true');
+    this.isLoggedIn = true;
     this.router.navigateByUrl(this.redirectUrl);
     return true;
   }
